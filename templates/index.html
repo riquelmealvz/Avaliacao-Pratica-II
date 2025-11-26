@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Lista de Alunos</title>
-    <link rel="stylesheet" href="../static/style.css">
+    <meta charset="UTF-8">
+    <title>Alunos Cadastrados</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <h1>Alunos Cadastrados</h1>
+    <h1>Lista de Alunos</h1>
     <a href="{{ url_for('cadastro') }}">Cadastrar novo aluno</a>
     <table border="1">
         <tr>
@@ -14,6 +15,8 @@
             <th>Idade</th>
             <th>Curso</th>
         </tr>
+    </thead>
+    <tbody>
         {% for aluno in alunos %}
         <tr>
             <td>{{ aluno['id'] }}</td>
@@ -22,6 +25,5 @@
             <td>{{ aluno['curso'] }}</td>
         </tr>
         {% endfor %}
-    </table>
 </body>
 </html>
